@@ -10,7 +10,7 @@ app.use(express.json());
 app.get('/api/get-next-num',(req,res)=>{
   const{num}=req.body
   if(typeof num!=='number'||isNaN(num)){
-    return res.status(400).json({status:'failure'})
+    return res.status(400).json({status:'success'})
   }
   const nextNumber=num+1
     res.status(200).json({message:nextNumber,status:'success'})
