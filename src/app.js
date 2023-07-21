@@ -13,7 +13,7 @@ app.get('/api/get-next-num',(req,res)=>{
     return res.status(400).json({status:'failure'})
   }
   const nextNumber=num+1
-    res.status(200).json({message:nextNumber,status:'success})
+    res.status(200).json({message:nextNumber,status:'success'})
 })
     
 
