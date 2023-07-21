@@ -9,11 +9,13 @@ app.use(express.json());
 // Return the response as {message : , status: }
 app.get('/api/get-next-num',(req,res)=>{
   const{num}=req.body
-  if(num){
-    return res.json({message:num+1,status:'success'})
+  if(typeofnum!=='number'||isNAN(num)){
+    return res.status(400).json({status:'failure'})
   }
-  res.json({status:'failure'})
+  const nextNumber=num+1
+    res.status(200).json({message:nextNumber,status:'success})
 })
+    
 
 
 module.exports = app;
